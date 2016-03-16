@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/3DVehicleControl.unity
-  isLoaded: 1
-  isActive: 1
