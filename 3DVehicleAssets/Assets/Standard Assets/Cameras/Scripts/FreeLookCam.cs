@@ -49,6 +49,10 @@ namespace UnityStandardAssets.Cameras
                 Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
                 Cursor.visible = !m_LockCursor;
             }
+            //Camera.main.transform.rotation = Quaternion.identity;
+            Vector3 myRotation = Camera.main.transform.rotation.eulerAngles;
+            myRotation.z = 0;
+            Camera.main.transform.eulerAngles = myRotation;
         }
 
 
