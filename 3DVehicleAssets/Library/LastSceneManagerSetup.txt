@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/3DVehicleControl.unity
+- path: C:/Users/Intern/Documents/GameDesignGithub/465/Assets/main.unity
   isLoaded: 1
   isActive: 1
