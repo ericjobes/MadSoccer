@@ -15,7 +15,9 @@ GameObject:
   - 114: {fileID: 11436820}
   - 114: {fileID: 11445088}
   - 114: {fileID: 11448228}
-  m_Layer: 0
+  - 114: {fileID: 11454990}
+  - 114: {fileID: 11404442}
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +84,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11404442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91ba4b4d75111442b43ddd7946899e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11436820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,7 +137,7 @@ MonoBehaviour:
     i14: 248
     i15: 139
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &11448228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +158,19 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &11454990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b02c53769668bc4a8f796b2247cfc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToThrow: {fileID: 0}
+  colorList: []
 --- !u!135 &13599700
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -180,6 +206,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8c6f99212e10fc94089a9453b464abd0, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194134}

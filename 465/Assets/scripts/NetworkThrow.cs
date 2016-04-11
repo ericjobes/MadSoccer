@@ -29,8 +29,8 @@ public class NetworkThrow : NetworkBehaviour {
 			newColor = colorList [(int)(Random.value * colorList.Count)];
 		}
 
-		//NetworkBall ballScript = obj.GetComponent<NetworkBall> ();
-		//ballScript.SetColor (newColor);
-		rb.velocity = transform.TransformDirection (Vector3.forward * 10);
-	}
+		NetworkBall ballScript = obj.GetComponent<NetworkBall> ();
+		ballScript.SetColor (newColor);
+        rb.velocity = transform.TransformDirection(Vector3.forward * 1000);
+    }
 }
