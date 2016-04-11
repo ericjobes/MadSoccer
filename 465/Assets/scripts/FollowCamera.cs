@@ -8,8 +8,13 @@ public class FollowCamera : MonoBehaviour {
     Vector3 offset;
 
     void Start()
-    {
+    { 
         offset = target.transform.position - transform.position;
+        Debug.Log(target.transform.position);
+        
+        Debug.Log(transform.position);
+        Debug.Log(offset);
+        offset.z = 10;
     }
 
     void LateUpdate()
