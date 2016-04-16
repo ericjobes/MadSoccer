@@ -10,10 +10,6 @@ public class FollowCamera : MonoBehaviour {
     void Start()
     { 
         offset = target.transform.position - transform.position;
-        Debug.Log(target.transform.position);
-        
-        Debug.Log(transform.position);
-        Debug.Log(offset);
         offset.z = 10;
     }
 

@@ -15,4 +15,14 @@ public class BulletMovement : NetworkBehaviour
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        //Debug.Log(col.gameObject.tag);
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("hit");
+            col.gameObject.GetComponent<TankHealth>().TakeDamage(10);
+        }
+    }
 }

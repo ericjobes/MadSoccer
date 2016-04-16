@@ -6,6 +6,7 @@ public class NetworkThrow : NetworkBehaviour {
 
 	public GameObject objectToThrow;
 	public List<Color> colorList;
+    public Transform spawn;
 
 	// Update is called once per frame
 	void Update () {
@@ -20,7 +21,7 @@ public class NetworkThrow : NetworkBehaviour {
 	//Calls the function on the server
 	[Command]
 	void CmdShoot() {
-		GameObject obj = Instantiate (objectToThrow, transform.position, transform.rotation) as GameObject;
+		GameObject obj = Instantiate (objectToThrow, spawn.position, spawn.rotation) as GameObject;
 		NetworkServer.Spawn (obj);
 		Rigidbody rb = obj.GetComponent<Rigidbody>();
 
@@ -32,5 +33,6 @@ public class NetworkThrow : NetworkBehaviour {
 		NetworkBall ballScript = obj.GetComponent<NetworkBall> ();
 		ballScript.SetColor (newColor);
         rb.velocity = transform.TransformDirection(Vector3.forward * 1000);
+        Destroy(rb.gameObject, 5);
     }
 }
