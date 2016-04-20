@@ -8,7 +8,8 @@ public class TankHealth : MonoBehaviour
     public Image m_FillImage;                           // The image component of the slider.
     public Color m_FullHealthColor = Color.green;       // The color the health bar will be when on full health.
     public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
-    //public GameObject m_ExplosionPrefab;                // A prefab that will be instantiated in Awake, then used whenever the tank dies.
+    public GameObject explosion;                		// A prefab that will be instantiated in Awake, then used whenever the tank dies.
+
 
 
     //private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
@@ -71,6 +72,8 @@ public class TankHealth : MonoBehaviour
     {
         // Set the flag so that this function is only called once.
         m_Dead = true;
+		Instantiate (explosion, this.transform.position, Quaternion.identity);
+		OnEnable();
 
         // Move the instantiated explosion prefab to the tank's position and turn it on.
         //m_ExplosionParticles.transform.position = transform.position;
@@ -83,6 +86,7 @@ public class TankHealth : MonoBehaviour
         //m_ExplosionAudio.Play();
 
         // Turn the tank off.
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+
     }
 }
