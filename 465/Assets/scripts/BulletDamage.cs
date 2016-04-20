@@ -19,5 +19,10 @@ public class BulletDamage : MonoBehaviour {
         {
             col.gameObject.GetComponent<TankHealth>().TakeDamage(10);
         }
+        if (col.gameObject.tag == "Boundary")
+        {
+            Debug.Log("about to die");
+            Network.Destroy(gameObject);
+        }
     }
 }

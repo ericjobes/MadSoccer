@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     void Start () {
         myScore = 0;
         health = 0f;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

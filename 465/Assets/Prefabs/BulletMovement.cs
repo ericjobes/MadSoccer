@@ -21,8 +21,15 @@ public class BulletMovement : NetworkBehaviour
         //Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("hit");
             col.gameObject.GetComponent<TankHealth>().TakeDamage(10);
+        } else
+        {
+            Network.Destroy(this.gameObject);
         }
+        /*
+        if ((col.gameObject.tag == "Boundary") || (col.gameObject.tag == "Ground")) 
+        {
+            Network.Destroy(this.gameObject);
+        }*/
     }
 }

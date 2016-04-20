@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11454990}
   - 114: {fileID: 11404442}
   - 114: {fileID: 11429574}
+  - 148: {fileID: 14823362}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b7668b2bfe359e45bded8ba6546f0f3, type: 3}
   m_Name: 
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b02c53769668bc4a8f796b2247cfc22, type: 3}
   m_Name: 
@@ -183,6 +184,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!148 &14823362
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194134}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 481004}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -217,6 +230,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: me
+      value: 
+      objectReference: {fileID: 194134}
+    - target: {fileID: 0}
+      propertyPath: m_SendInterval
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

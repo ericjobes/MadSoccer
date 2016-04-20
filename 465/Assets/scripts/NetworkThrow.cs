@@ -7,10 +7,20 @@ public class NetworkThrow : NetworkBehaviour {
 	public GameObject objectToThrow;
 	public List<Color> colorList;
     public Transform spawn;
+    private int timer;
+
+    void Start()
+    {
+        timer = 0;
+    }
 
 	// Update is called once per frame
 	void Update () {
-
+        timer++;
+        if(timer > 5)
+        {
+            //Network.Destroy(GetComponent<NetworkView>().viewID);
+        }
 		if (objectToThrow != null) {
 			if (Input.GetButtonUp ("Fire1")) {
 				CmdShoot ();
@@ -33,6 +43,5 @@ public class NetworkThrow : NetworkBehaviour {
 		NetworkBall ballScript = obj.GetComponent<NetworkBall> ();
 		ballScript.SetColor (newColor);
         rb.velocity = transform.TransformDirection(Vector3.forward * 1000);
-        Destroy(rb.gameObject, 5);
     }
 }
