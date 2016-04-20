@@ -1,4 +1,0 @@
-sceneSetups:
-- path: C:/Users/Intern/Documents/GameDesignGithub/465/Assets/main.unity
-  isLoaded: 1
-  isActive: 1
