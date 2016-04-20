@@ -4,7 +4,8 @@ using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
-    [RequireComponent(typeof (CarController))]
+    /*
+    [RequireComponent(typeof(CarController))]
     public class CarAudio : MonoBehaviour
     {
         // This script reads some of the car's current properties and plays sounds accordingly.
@@ -82,10 +83,11 @@ namespace UnityStandardAssets.Vehicles.Car
             m_StartedSound = false;
         }
 
-
+        
         // Update is called once per frame
         private void Update()
         {
+            
             // get the distance to main camera
             float camDist = (Camera.main.transform.position - transform.position).sqrMagnitude;
 
@@ -180,5 +182,6 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             return (1.0f - value)*from + value*to;
         }
-    }
+        
+    }*/
 }

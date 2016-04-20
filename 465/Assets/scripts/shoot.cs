@@ -1,27 +1,42 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Networking; //Need to add for Network behaviours
 
-public class shoot : MonoBehaviour {
+public class shoot : NetworkBehaviour
+{
 
-    public Rigidbody projectile;
-    Rigidbody clone;
-    public float speed;
-    public string key;
-    public Transform fireTransform;
+    public GameObject objectToThrow;
+    public List<Color> colorList;
 
-    void start()
-    {
-        
-    }
-
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(key))
-        {
-            clone = Instantiate(projectile, fireTransform.position, fireTransform.rotation)as Rigidbody;
-            clone.velocity = speed * fireTransform.forward; 
 
-            Destroy(clone.gameObject, 5);
+        if (objectToThrow != null)
+        {
+            if (Input.GetButtonUp("Fire1"))
+            {
+                CmdShoot();
+            }
         }
+    }
+
+    //Calls the function on the server
+    [Command]
+    void CmdShoot()
+    {
+        GameObject obj = Instantiate(objectToThrow, transform.position, transform.rotation) as GameObject;
+        NetworkServer.Spawn(obj);
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+
+        Color newColor = new Color(Random.value, Random.value, Random.value);
+        if (colorList.Count > 0)
+        {
+            newColor = colorList[(int)(Random.value * colorList.Count)];
+        }
+
+        //NetworkBall ballScript = obj.GetComponent<NetworkBall> ();
+        //ballScript.SetColor (newColor);
+        rb.velocity = transform.TransformDirection(Vector3.forward * 10);
     }
 }

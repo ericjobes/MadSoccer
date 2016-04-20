@@ -7,13 +7,13 @@ public class Player : MonoBehaviour {
     public float health;
 
     public GameObject gun;
-    public shoot barrel;
+    public NetworkThrow barrel;
 
     // Use this for initialization
     void Start () {
         myScore = 0;
         health = 0f;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
