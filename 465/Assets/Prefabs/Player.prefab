@@ -443,6 +443,7 @@ GameObject:
   - 4: {fileID: 452456}
   - 33: {fileID: 3300276}
   - 23: {fileID: 2337694}
+  - 114: {fileID: 11429632}
   m_Layer: 8
   m_Name: SkyCarBody
   m_TagString: Untagged
@@ -3377,15 +3378,15 @@ MonoBehaviour:
   m_MaximumSteerAngle: 25
   m_SteerHelper: 1
   m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 3000
+  m_FullTorqueOverAllWheels: 5000
   m_ReverseTorque: 2000
-  m_MaxHandbrakeTorque: 3000
-  m_Downforce: 50
+  m_MaxHandbrakeTorque: 1000
+  m_Downforce: 40
   m_SpeedType: 0
   m_Topspeed: 100
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
-  m_BrakeTorque: 5000
+  m_BrakeTorque: 1000
 --- !u!114 &11414864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3457,6 +3458,19 @@ MonoBehaviour:
   m_FillAmount: 0.8
   m_FillClockwise: 0
   m_FillOrigin: 3
+--- !u!114 &11429632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bf099deefba674e97113c722b46f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterialRef1: {fileID: 2100000, guid: 9b07f514eae70664b8cafa048569e989, type: 2}
+  newMaterialRef2: {fileID: 2100000, guid: 5fc6ca792716dba4597032e12d1786d3, type: 2}
 --- !u!114 &11430166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3782,12 +3796,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106668}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2239ee33956736e4883aa8f6d6564c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 184322}
+  target2: {fileID: 0}
+  player: {fileID: 0}
+  abovePlayerOffsetZ: 0
+  abovePlayerOffsetY: 0
   damping: 5
 --- !u!114 &11487754
 MonoBehaviour:
@@ -5583,7 +5601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive

@@ -19,10 +19,10 @@ public class BulletMovement : NetworkBehaviour
     void OnCollisionEnter(Collision col)
     {
         //Debug.Log(col.gameObject.tag);
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("hit");
-            col.gameObject.GetComponent<TankHealth>().TakeDamage(10);
-        }
+		if (col.gameObject.tag == "Player") {
+			Debug.Log ("hit");
+			col.gameObject.GetComponent<TankHealth> ().TakeDamage (10);
+		}
+		Network.Destroy (this.gameObject);
     }
 }
